@@ -8,7 +8,7 @@ describe('backend-express-template routes', () => {
     return setup(pool);
   });
 
-  ///////// FLOWERS ///////////
+  ///////////////////////// FLOWERS /////////////////////////
 
 
   it('/ should return a list of flowers', async () => {
@@ -72,6 +72,13 @@ describe('backend-express-template routes', () => {
     expect(res.body.id).toEqual('9');
   });
 
+
+
+  //////////////////////////FRUITS ///////////////////////
+  it('/ should return a list of fruits', async () => {
+    const res = await request(app).get('/fruits');
+    expect(res.body.length).toEqual(7);
+  });
 
 
 
