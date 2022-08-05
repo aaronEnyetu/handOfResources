@@ -90,6 +90,11 @@ describe('backend-express-template routes', () => {
     expect(res.body).toEqual(coyote);
   });
 
+  it('POST should create a new fruit', async () => {
+    const res = await request(app).post('/fruits').send({ type: 'sea mango', is_edible: false });
+    expect(res.body.type).toEqual('sea mango');
+  });
+
 
 
 
