@@ -95,6 +95,13 @@ describe('backend-express-template routes', () => {
     expect(res.body.type).toEqual('sea mango');
   });
 
+  it('DELETE /fruits/:id should remove an existing fruit', async () => {
+    const res = await request(app).delete('/fruits/4');
+    expect(res.status).toEqual(200);
+    expect(res.body.id).toEqual('4');
+  });
+
+
 
 
 
