@@ -101,6 +101,12 @@ describe('backend-express-template routes', () => {
     expect(res.body.id).toEqual('4');
   });
 
+  it('PUT /fruits/:id should update an existing fruit', async () => {
+    const res = await request(app).put('/fruits/4').send({ type: 'Sponge Gourd', is_edible: false });
+    expect(res.status).toEqual(200);
+    expect(res.body.type).toBe('Sponge Gourd');
+  });
+
 
 
 
