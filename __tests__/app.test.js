@@ -54,6 +54,12 @@ describe('backend-express-template routes', () => {
     expect(res.body.name).toEqual('Venus');
   });
 
+  it('POST should add a new planet', async () => {
+    const res = await request(app).post('/planets').send({ name: 'Ceres', radius_miles: 294 });
+    console.log('res', res);
+    expect(res.body.name).toEqual('Ceres');
+  });
+
 
 
 
