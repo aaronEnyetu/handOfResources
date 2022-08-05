@@ -150,6 +150,14 @@ describe('backend-express-template routes', () => {
   });
 
 
+  //////////////////////////GASSES ///////////////////////
+
+  it('/ should return a list of gasses', async () => {
+    const res = await request(app).get('/gasses');
+    expect(res.body.length).toEqual(4);
+  });
+
+
 
   
   afterAll(() => {
