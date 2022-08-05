@@ -42,6 +42,13 @@ describe('backend-express-template routes', () => {
   });
 
 
+  //////////////////////////PLANETS ///////////////////////
+
+  it('/ should return a list of planets', async () => {
+    const res = await request(app).get('/planets');
+    expect(res.body.length).toEqual(9);
+  });
+
 
 
 
