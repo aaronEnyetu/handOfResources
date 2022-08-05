@@ -130,6 +130,12 @@ describe('backend-express-template routes', () => {
     expect(res.body).toEqual(expected);
   });
 
+  it('POST /animals should create a new animal', async () => {
+    const res = await request(app).post('/animals').send({ type: 'Shark', lifespan: 30, diet: 'Carnivore', does_tricks: false });
+    
+    expect(res.body.type).toBe('Shark');
+  });
+
 
 
   
