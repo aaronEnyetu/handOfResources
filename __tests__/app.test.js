@@ -118,6 +118,19 @@ describe('backend-express-template routes', () => {
     expect(tiger).toHaveProperty('does_tricks', true);
   });
 
+  it('should return a specific animal detail', async () => {
+    const res = await request(app).get('/animals/1');
+    const expected = {
+      id: '1',
+      type: 'Tiger',
+      lifespan: 26,
+      diet: 'Carnivore',
+      does_tricks: true
+    };
+    expect(res.body).toEqual(expected);
+  });
+
+
 
   
   afterAll(() => {
