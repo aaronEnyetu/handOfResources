@@ -136,6 +136,12 @@ describe('backend-express-template routes', () => {
     expect(res.body.type).toBe('Shark');
   });
 
+  it('PUT /animals/:id should update animal', async () => {
+    const res = await request(app).put('/animals/6').send({ type: 'Wolf', lifespan: 8, diet: 'Carnivore', does_tricks: false });
+    
+    expect(res.status).toEqual(200);
+  });
+
 
 
   
