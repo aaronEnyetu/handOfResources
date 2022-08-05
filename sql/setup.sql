@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS flowers CASCADE;
 DROP TABLE IF EXISTS planets CASCADE;
 DROP TABLE IF EXISTS fruits CASCADE;
 DROP TABLE IF EXISTS animals CASCADE;
-
+DROP TABLE IF EXISTS gasses CASCADE;
 
 
 
@@ -106,3 +106,30 @@ VALUES
 ('Bear', 25, 'Omnivore', true),
 ('Moose', 25, 'Herbivore', false),
 ('Dog', 13, 'Omnivore', true);
+
+
+
+------------Gasses Table----------
+
+CREATE TABLE gasses (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name VARCHAR,
+    appearance VARCHAR,
+    atomic_number INT,
+    -- group INT,
+    flammable BOOLEAN
+);
+
+INSERT INTO gasses (
+    name,
+    appearance,
+    atomic_number,
+    -- group,
+    flammable
+)
+
+VALUES
+('Oxygen', 'colorless', 8, false),
+('Carbondioxide', 'colorless', 6, false),
+('Hydrogen', 'colorless', 1, true),
+('Helium', 'colorless', 2, false);
