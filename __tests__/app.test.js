@@ -80,6 +80,16 @@ describe('backend-express-template routes', () => {
     expect(res.body.length).toEqual(7);
   });
 
+  it('/:id should return a specific fruit', async () => {
+    const res = await request(app).get('/fruits/3');
+    const coyote = {
+      id: '3',
+      type: 'Coyote Melon',
+      is_edible: false
+    };
+    expect(res.body).toEqual(coyote);
+  });
+
 
 
 
