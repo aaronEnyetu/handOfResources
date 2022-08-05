@@ -49,6 +49,11 @@ describe('backend-express-template routes', () => {
     expect(res.body.length).toEqual(9);
   });
 
+  it('/planets/:id should return a specific planet', async () => {
+    const res = await request(app).get('/planets/2');
+    expect(res.body.name).toEqual('Venus');
+  });
+
 
 
 
