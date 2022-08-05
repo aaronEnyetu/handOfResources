@@ -108,9 +108,15 @@ describe('backend-express-template routes', () => {
   });
 
 
+  //////////////////////////ANIMALS ///////////////////////
 
-
-
+  it('should return a list of animals', async () => {
+    const res = await request(app).get('/animals');
+    const tiger = res.body.find((animal) => animal.id === '1');
+    expect(res.body.length).toEqual(6);
+    expect(tiger).toHaveProperty('type', 'Tiger');
+    expect(tiger).toHaveProperty('does_tricks', true);
+  });
 
 
   
