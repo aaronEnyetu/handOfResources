@@ -2,8 +2,9 @@
 -- The SQL in this file will be executed when you run `npm run setup-db`
 DROP TABLE IF EXISTS flowers CASCADE;
 DROP TABLE IF EXISTS planets CASCADE;
+DROP TABLE IF EXISTS fruits CASCADE;
 
------Flowers Table----------
+-----------Flowers Table----------
 
 CREATE TABLE flowers (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -49,3 +50,26 @@ VALUES
 ('Uranus', 15759),
 ('Neptune', 15299),
 ('Pluto', 738);
+
+
+------------Fruits Table----------
+CREATE TABLE fruits (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    type VARCHAR,
+    is_edible BOOLEAN
+);
+
+
+INSERT INTO fruits (
+    type,
+    is_edible
+)
+
+VALUES
+('Apples', true),
+('Apricots', true),
+('Coyote Melon', false),
+('Firethorn', false),
+('Foxhead', false),
+('Bananas', true),
+('Oranges', true);
