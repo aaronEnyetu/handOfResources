@@ -35,6 +35,12 @@ describe('backend-express-template routes', () => {
     expect(res.body.color).toBe('pale yellow-green');
   });
 
+  it('DELETE should remove an existing flower', async () => {
+    const res = await request(app).delete('/flowers/1');
+    expect(res.status).toEqual(200);
+    expect(res.body.id).toEqual('1');
+  });
+
 
 
 
