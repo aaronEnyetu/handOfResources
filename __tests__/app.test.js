@@ -60,6 +60,12 @@ describe('backend-express-template routes', () => {
     expect(res.body.name).toEqual('Ceres');
   });
 
+  it('PUT should update an existing planet', async () => {
+    const res = await request(app).put('/planets/3').send({ name: 'Terra' });
+    expect(res.status).toEqual(200);
+    expect(res.body.name).toBe('Terra');
+  });
+
 
 
 
