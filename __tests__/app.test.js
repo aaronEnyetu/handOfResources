@@ -142,6 +142,13 @@ describe('backend-express-template routes', () => {
     expect(res.status).toEqual(200);
   });
 
+  it('DELETE /animals/:id should delete animal', async () => {
+    const res = await request(app).delete('/animals/5');
+    expect(res.status).toEqual(200);
+    expect(res.body.id).toEqual('5');
+
+  });
+
 
 
   
