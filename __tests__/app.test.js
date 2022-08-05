@@ -19,6 +19,11 @@ describe('backend-express-template routes', () => {
     expect(bloom).toHaveProperty('common_name', 'checker bloom');
   });
 
+  it('/flowers/:id should return a specific flower', async () => {
+    const res = await request(app).get('/flowers/5');
+    expect(res.body.common_name).toBe('cornflower');
+  });
+
 
 
 
