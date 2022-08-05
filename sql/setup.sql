@@ -3,6 +3,10 @@
 DROP TABLE IF EXISTS flowers CASCADE;
 DROP TABLE IF EXISTS planets CASCADE;
 DROP TABLE IF EXISTS fruits CASCADE;
+DROP TABLE IF EXISTS animals CASCADE;
+
+
+
 
 -----------Flowers Table----------
 
@@ -53,6 +57,7 @@ VALUES
 
 
 ------------Fruits Table----------
+
 CREATE TABLE fruits (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     type VARCHAR,
@@ -73,3 +78,31 @@ VALUES
 ('Foxhead', false),
 ('Bananas', true),
 ('Oranges', true);
+
+
+------------Animals Table----------
+
+CREATE TABLE animals (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    type VARCHAR,
+    lifespan INT,
+    diet VARCHAR,
+    does_tricks BOOLEAN
+
+);
+
+
+INSERT INTO animals (
+    type,
+    lifespan,
+    diet,
+    does_tricks
+)
+
+VALUES
+('Tiger', 26, 'Carnivore', true),
+('Hippopotamus', 50, 'Herbivore', false),
+('Elephant', 70, 'Herbivore', true),
+('Bear', 25, 'Omnivore', true),
+('Moose', 25, 'Herbivore', false),
+('Dog', 13, 'Omnivore', true);
