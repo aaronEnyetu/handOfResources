@@ -1,6 +1,9 @@
 -- Use this file to define your SQL tables
 -- The SQL in this file will be executed when you run `npm run setup-db`
 DROP TABLE IF EXISTS flowers CASCADE;
+DROP TABLE IF EXISTS planets CASCADE;
+
+-----Flowers Table----------
 
 CREATE TABLE flowers (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -23,3 +26,26 @@ VALUES
 ('cornflower', 'blue, pink, purple, white', 16)
 ;
 
+------------Planets Table----------
+
+CREATE TABLE planets (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name VARCHAR,
+    radius_miles INT
+);
+
+INSERT INTO planets (
+    name,
+    radius_miles
+)
+
+VALUES
+('Mercury', 1516),
+('Venus', 3760),
+('Earth', 3959),
+('Mars', 2106),
+('Jupiter', 43441),
+('Saturn', 36184),
+('Uranus', 15759),
+('Neptune', 15299),
+('Pluto', 738);
