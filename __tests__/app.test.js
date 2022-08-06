@@ -169,6 +169,12 @@ describe('backend-express-template routes', () => {
     expect(res.body).toEqual(hydrogen);
   });
 
+  it('POST should create a new gass', async () => {
+    const res = await request(app).post('/gasses').send({ name: 'Butane', appearance: 'colorless', atomic_number: 14, flammable: true });
+    expect(res.body.name).toBe('Butane');
+  });
+
+
 
 
 
