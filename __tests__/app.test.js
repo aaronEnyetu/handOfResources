@@ -157,6 +157,19 @@ describe('backend-express-template routes', () => {
     expect(res.body.length).toEqual(4);
   });
 
+  it('should return a specific gas detail', async () => {
+    const res = await request(app).get('/gasses/3');
+    const hydrogen = {
+      id: '3',
+      name: 'Hydrogen',
+      appearance: 'colorless',
+      atomic_number: 1,
+      flammable: true
+    };
+    expect(res.body).toEqual(hydrogen);
+  });
+
+
 
 
   
