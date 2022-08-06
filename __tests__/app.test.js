@@ -175,6 +175,15 @@ describe('backend-express-template routes', () => {
   });
 
 
+  it('PUT /gasses/:id should update gas', async () => {
+    const res = await request(app).put('/gasses/3').send({ name: 'Argon', appearance: 'colorless', atomic_number: 18, flammable: false });
+    
+    expect(res.status).toEqual(200);
+    expect(res.body.name).toBe('Argon');
+  });
+
+
+
 
 
 
