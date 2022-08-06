@@ -182,6 +182,13 @@ describe('backend-express-template routes', () => {
     expect(res.body.name).toBe('Argon');
   });
 
+  it('DELETE /gasses/:id should delete gass', async () => {
+    const res = await request(app).delete('/gasses/4');
+    expect(res.status).toEqual(200);
+    expect(res.body.id).toEqual('4');
+
+  });
+
 
 
 
